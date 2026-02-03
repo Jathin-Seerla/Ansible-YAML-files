@@ -1,4 +1,4 @@
-- name: gathering facts
+- name: gathering facts #it will have all the information
   hosts: local
   connection: local
   tasks:
