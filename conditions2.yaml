@@ -7,3 +7,9 @@
       name: nginx
       state: present
     when: ansible_os_family == "Redhat"
+
+  - name: install nginx in debain
+    ansible.builtin.apt:
+      name: nginx
+      state: present
+    when: ansible_os_family == "Debain"
