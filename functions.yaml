@@ -35,3 +35,9 @@
       name: "Jathin Sagar Seerla"
     ansible.builtin.debug:
       msg: "hello {{ name | upper }}"
+
+  - name: covert to upper case
+    vars:
+      name: "Jathin Sagar Seerla"
+    ansible.builtin.debug:
+      msg: "hello {{ name | lower }}"
