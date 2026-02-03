@@ -1,9 +1,9 @@
 - name: install packages
-  hosts: local
-  connection: local
+  hosts: frontend
+  become: yes
   tasks:
   - name: install packages
-    ansible.builtin.debain:
+    ansible.builtin.package:
       name: "{{ item }}"
       state: installed
     loop:
