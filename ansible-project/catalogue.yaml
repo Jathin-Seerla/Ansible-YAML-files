@@ -47,11 +47,11 @@
         src: catalogue.service
         dest: /etc/systemd/system/catalogue.service
 
-    - name: systemctl deamon reload
+    - name: systemctl daemon reload
       ansible.builtin.systemd_service:
-        deamon_reload: true
+        daemon_reload: true
 
-    - name: stsrt and enable catalogue
+    - name: restart and enable catalogue
       ansible.builtin.service:
         name: catalogue
         state: started
