@@ -67,10 +67,15 @@
         name: mongodb-mongosh
         state: present
       
+    #- name: load products data
+      #community.mongodb.mongodb_shell:
+        #file: "/app/db/master-data.js"
+        #login_host: 172.31.71.206
+
     - name: load products data
-      community.mongodb.mongodb_shell:
-        file: "/app/db/master-data.js"
-        login_host: 172.31.71.206
+      ansible.builtin.command: >
+        mongosh --host 172.31.71.206 < /app/db/master-data.js
+
 
 
     
