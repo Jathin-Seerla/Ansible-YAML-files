@@ -89,6 +89,11 @@
       ansible.builtin.debug:
         msg: "{{ catalogue_output }}"
 
+    - name: load produvts
+      ansible.builtin.command: mongosh --host 172.31.22.43 </app/db/master-data.js
+      when: catalogue_output.stdout < 0
+      
+
 
 
     
