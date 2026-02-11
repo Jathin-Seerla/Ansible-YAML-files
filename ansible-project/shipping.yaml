@@ -58,8 +58,11 @@
 
   - name: install mysql client
     ansible.builtin.dnf:
-      name: mysql
+      name: "{{ item }}"
       state: installed
+    loop:
+    - PyMySQL
+    - maven
 
   - name: connect to mysql using app user
     community.mysql.mysql_info:
