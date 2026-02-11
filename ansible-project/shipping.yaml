@@ -67,19 +67,19 @@
       enabled: yes
 
 
-  - name: connect to mysql using app user
-    community.mysql.mysql_info:
-      login_user: shipping
-      login_password: RoboShop@1
-      login_host: 172.31.20.114
-      login_db: cities
-      query: "SELECT 1;"
+  # - name: connect to mysql using app user
+  #   community.mysql.mysql_info:
+  #     login_user: shipping
+  #     login_password: RoboShop@1
+  #     login_host: 172.31.20.114
+  #     login_db: cities
+  #     query: "SELECT 1;"
 
   - name: import data
   #tags: we use this to just run this particular part
   #- import we use -t import and run this in ansible sever
     community.mysql.mysql_db:
-      name: cities 
+      name: all
       login_user: shipping 
       login_password: RoboShop@1
       login_host: 172.31.20.114
