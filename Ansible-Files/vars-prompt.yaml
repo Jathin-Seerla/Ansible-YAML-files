@@ -1,0 +1,17 @@
+- name: variables from prompt
+  hosts: local
+  connection: local
+  vars_prompt:
+  - name: USERNAME
+    prompt: Please enter your username
+    private: true #what we entered the other person cant see because we kept true
+
+  - name: PASSWORD
+    prompt: Please enter your password
+    private: true #what we entered the other person cant see because we kept true
+ 
+  tasks:
+  - name: print user informatiom
+    ansible.builtin.debug:
+    # vars reference should be surrounded by {{}}
+      msg: "Hello Username is: {{ USERNAME }}, password is: {{ PASSWORD  }}"
