@@ -2,6 +2,13 @@
   ansible.builtin.service:
     name: nginx
     state: restarted
+    enable: yes
+
+    # - name: start and enable nginx
+    #   ansible.builtin.service:
+    #     name: nginx
+    #     state: started
+    #     enabled: yes
 
 # - name: Validate nginx config
 #   ansible.builtin.command: nginx -t
