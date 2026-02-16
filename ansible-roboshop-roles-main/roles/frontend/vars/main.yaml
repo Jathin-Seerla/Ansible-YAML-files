@@ -1,5 +1,5 @@
 CATALOGUE_HOST: 172.31.30.201
-USER_HOST: localhost
-CART_HOST: localhost
-SHIPPING_HOST: localhost
-PAYMENT_HOST: localhost
+# USER_HOST: localhost
+# CART_HOST: localhost
+# SHIPPING_HOST: localhost
+# PAYMENT_HOST: localhost
