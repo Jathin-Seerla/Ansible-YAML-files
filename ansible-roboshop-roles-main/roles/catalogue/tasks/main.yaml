@@ -19,7 +19,8 @@
     state: present
 
 - name: check products loaded or not
-  ansible.builtin.command: mongosh --host 172.31.22.37 --eval 'db.getMongo().getDBNames().indexOf("catalogue")'
+  ansible.builtin.command: mongosh --host 172.31.30.201 --eval 'db.getMongo().getDBNames().indexOf("catalogue")'
+      # mongosh --host {{ hostvars['mongodb']['ansible_host'] }} < /app/db/master-data.js
   register: catalogue_output
   # ignore_errors: true
   # ignore_unreachable: true
@@ -31,7 +32,7 @@
   # ignore_unreachable: true
 
 - name: load products
-  ansible.builtin.shell: mongosh --host 172.31.22.37 < /app/db/master-data.js
+  ansible.builtin.shell: mongosh --host 172.31.30.201 < /app/db/master-data.js
   when: catalogue_output.stdout | int < 0
   # ignore_errors: true
   # ignore_unreachable: true
